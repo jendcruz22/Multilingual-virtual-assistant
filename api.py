@@ -5,18 +5,19 @@ from flask import Flask, request, render_template,jsonify
 app = Flask(__name__)
 
 def do_something(question):
-    #wiki
-    final = wikipedia.summary(question)
-    if final == 'null':
-         #wolframalpha
-        app_id = "53XQ53-622WXPK9TP"
-        client = wolframalpha.Client(app_id)
-        res = client.query(question)
-        answer = next(res.results).text
-        return(answer)
+    #wolframalpha
+    app_id = "53XQ53-622WXPK9TP"
+    client = wolframalpha.Client(app_id)
+    res = client.query(question)
+    answer = next(res.results).text
+
+    if answer == 'null':
+        #wiki
+        final = wikipedia.summary(question)
+        return(final)
 
     else:
-        return(final)
+        return(answer)
    
 
 @app.route('/')
