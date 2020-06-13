@@ -5,6 +5,17 @@
     <title>First Flask App</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Century Gothic;
+            background-image: linear-gradient(rgba(0,4,40,0.9),rgba(0,78,146,0.9));
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>    
 </head>
 
 <script>
@@ -32,11 +43,9 @@ var question= $('#question').val();
 };
 
   </script>
-<body>
-    <p>
-        Taking input from web<br><br>
-
-            Text_Value1<input type="text" id="question" name="question"><br><br>
+<body style="text-align: center;">
+    <p style="color: white; font-weight: 300;">
+        Welcome to the search engine. <br>Type anything down below to get information on it. <br><br><input type="text" id="question" name="question"><br><br>
             <button id="clicked" onclick="myFunction()">Submit</button>
         </p>
     <div class="show-data" >
