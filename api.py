@@ -5,19 +5,23 @@ from flask import Flask, request, render_template,jsonify
 app = Flask(__name__)
 
 def do_something(question):
-    #wolframalpha
-    app_id = "53XQ53-622WXPK9TP"
-    client = wolframalpha.Client(app_id)
-    res = client.query(question)
-    answer = next(res.results).text
-
-    if answer == 'null':
-        #wiki
+    #wiki
+    try:
         final = wikipedia.summary(question)
         return(final)
+    except wikipedia.exceptions.DisambiguationError as e:
+        return("{0}".format(e))
 
-    else:
-        return(answer)
+    # if final == 'null':
+    #     #wolframalpha
+    #     app_id = "53XQ53-622WXPK9TP"
+    #     client = wolframalpha.Client(app_id)
+    #     res = client.query(question)
+    #     answer = next(res.results).text
+    #     return(answer
+    #     )
+    # else:
+        
    
 
 @app.route('/')
