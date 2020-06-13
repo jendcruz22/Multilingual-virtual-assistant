@@ -31,7 +31,7 @@ def home():
 @app.route('/join', methods=['GET','POST'])
 def my_form_post():
     question = request.form['question']
-    word = request.args.get('question')
+    # word = request.args.get('question')
     answer = do_something(question)
     result = {
         "output": answer
