@@ -12,18 +12,6 @@ def do_something(question):
     except wikipedia.exceptions.DisambiguationError as e:
         return("{0}".format(e))
 
-    # if final == 'null':
-    #     #wolframalpha
-    #     app_id = "53XQ53-622WXPK9TP"
-    #     client = wolframalpha.Client(app_id)
-    #     res = client.query(question)
-    #     answer = next(res.results).text
-    #     return(answer
-    #     )
-    # else:
-        
-   
-
 @app.route('/')
 def home():
     return render_template('home.html')
