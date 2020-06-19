@@ -12,6 +12,25 @@ def do_something(question):
     except wikipedia.exceptions.DisambiguationError as e:
         return("{0}".format(e))
 
+# def show_entry_fields():
+# try:
+#     #wolframalpha
+#     app_id = "53XQ53-622WXPK9TP"
+#     client = wolframalpha.Client(app_id)
+#     res = client.query(e1)
+#     answer = next(res.results).text
+#     root = tk.Tk()
+#     w = tk.Label(root, text="Results: %s" % (answer))
+#     e1.delete(0, tk.END)
+
+# except:
+#     #wiki
+#     print()
+#     root = tk.Tk()
+#     w = tk.Label(root, text="Results: %s" % (wikipedia.summary(e1)))
+#     e1.delete(0, tk.END)
+
+
 @app.route('/')
 def home():
     return render_template('home.html')
